@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BatchSpringboot.iml" filepath="$PROJECT_DIR$/.idea/BatchSpringboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring_MVC_CRUD/Spring_MVC_CRUD/Spring_MVC_CRUD.iml" filepath="$PROJECT_DIR$/Spring_MVC_CRUD/Spring_MVC_CRUD/Spring_MVC_CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcore/springcore/springcore.iml" filepath="$PROJECT_DIR$/springcore/springcore/springcore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thymeleafdemo/thymeleafdemo/thymeleafdemo.iml" filepath="$PROJECT_DIR$/thymeleafdemo/thymeleafdemo/thymeleafdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validationdemo/validationdemo/validationdemo.iml" filepath="$PROJECT_DIR$/validationdemo/validationdemo/validationdemo.iml" />
+    </modules>
+  </component>
+</project>
