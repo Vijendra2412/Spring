@@ -10,42 +10,42 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class DemoSecurityConfig {
+
     @Bean
-    public InMemoryUserDetailsManager userDetailsManager(){
+    public InMemoryUserDetailsManager userDetailsManager() {
+
+        UserDetails john = User.builder()
+                .username("john")
+                .password("{noop}test123")
+                .roles("EMPLOYEE")
+                .build();
+
         UserDetails vj = User.builder()
                 .username("vj")
                 .password("{noop}test123")
-                .roles("EMPLOYEE")
+                .roles("EMPLOYEE", "MANAGER")
                 .build();
 
         UserDetails vijay = User.builder()
                 .username("vijay")
                 .password("{noop}test123")
-                .roles("EMPLOYEE","MANAGER")
+                .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
-        UserDetails pk = User.builder()
-                .username("pk")
-                .password("{noop}test123")
-                .roles("EMPLOYEE","MANAGER","ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(vj,vijay,pk);
+        return new InMemoryUserDetailsManager(john, vj, vijay);
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
-                configurer
-                        .anyRequest().authenticated()
-
+                        configurer.anyRequest().authenticated()
                 )
                 .formLogin(form ->
-                        form
-                                .loginPage("/showMyLoginPage")
+                        form.loginPage("/showMyLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
-                        );
+                                .permitAll()
+                );
+
         return http.build();
     }
-
 }
