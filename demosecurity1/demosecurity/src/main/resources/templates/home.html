@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>VjCoder Company Home Page </title>
+</head>
+<body>
+<h2> VjCoder Company Home yahoo123:-</h2>
+
+<hr>
+
+<p>Welcome to the VjCoder company home page!</p>
+
+<hr>
+<!--display username and role-->
+<p>
+    User: <span sec:authentication="principal.username"> </span>
+    <br><br>
+    Roles(s): <span sec:authentication="principal.authorities"> </span>
+</p>
+
+<!--Add a logout button-->
+<form action="#" th:action="@{/logout}" method="POST">
+<input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
