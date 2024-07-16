@@ -51,7 +51,11 @@ public class DemoSecurityConfig {
                 )
                 .logout(logout ->logout.permitAll()
 
-                );
+                )
+//vj
+                .exceptionHandling(configurer ->
+                        configurer.accessDeniedPage("/access-denied")
+                        );
 
 
 
